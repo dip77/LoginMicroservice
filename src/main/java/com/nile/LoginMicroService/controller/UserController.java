@@ -55,7 +55,13 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/user/register")
     public Boolean register(@RequestBody UserEntity userEntities) {
-        return userService.register(userEntities);
+        Boolean isError;
+        try {
+             isError=userService.register(userEntities);
+        } catch (Exception e) {
+             isError=false;
+        }
+        return isError;
     }
 
 }
