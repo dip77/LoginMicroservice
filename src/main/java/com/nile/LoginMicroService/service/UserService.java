@@ -8,6 +8,6 @@ public interface UserService {
 
     UserEntity authenticate(String email,String password);
     UserEntity editProfile(UserEntity userEntity);
-    UserEntity register(UserEntity userEntity);
+    Boolean register(UserEntity userEntity);
     List<UserEntity> saveAll(List<UserEntity> userEntities);
 }

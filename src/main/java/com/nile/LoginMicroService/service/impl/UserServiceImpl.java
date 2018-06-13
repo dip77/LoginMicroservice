@@ -25,8 +25,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserEntity register(UserEntity userEntity) {
-        return userRepository.save(userEntity);
+    public Boolean register(UserEntity userEntity) {
+        return userRepository.save(userEntity)!=null;
     }
 
     @Override

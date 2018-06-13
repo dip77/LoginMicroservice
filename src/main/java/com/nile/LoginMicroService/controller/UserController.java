@@ -54,11 +54,8 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/user/register")
-    public UserDTO register(@RequestBody UserEntity userEntities) {
-        UserEntity userEntityTemp = userService.register(userEntities);
-        UserDTO userDTO = new UserDTO();
-        BeanUtils.copyProperties(userEntityTemp, userDTO);
-        return userDTO;
+    public Boolean register(@RequestBody UserEntity userEntities) {
+        return userService.register(userEntities);
     }
 
 }
